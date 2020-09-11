@@ -45,6 +45,11 @@
     <sf:deploy username="${sf2.username}" password="${sf2.password}" serverurl="${sf.serverurl}"  deployRoot="../force-app/main/default" trace="true" runAllTests="true" pollWaitMillis="40000"/>
 	</target>
 
+  <target name="DEVRunSpecificValidateDeploy">
+    <!-- <copy file="${sf2.dir}" todir="${sf2.retrieveTarget}" overwrite="true" failonerror="true"/> -->
+    <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}"  deployRoot="../force-app/main/default" trace="true" checkOnly="true" testLevel="RunSpecifiedTests" pollWaitMillis="40000"><runTest>TestEmailMessageTriggerFunctions</runTest>SampleClass1Test</sf:deploy>
+	</target>
+
   <target name="validateTestDeployToProd">
         <sf:deploy username="${prodSf.username}" password="${prodSf.password}" serverurl="${prodSf.serverurl}" maxPoll="${prodSf.maxPoll}" deployRoot="../force-app/main/default" testLevel="RunLocalTests" rollbackOnError="true" checkOnly="true" pollWaitMillis="40000"/>
   </target>
