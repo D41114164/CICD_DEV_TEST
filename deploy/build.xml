@@ -47,7 +47,7 @@
 
   <target name="DEVRunSpecificValidateDeploy">
     <!-- <copy file="${sf2.dir}" todir="${sf2.retrieveTarget}" overwrite="true" failonerror="true"/> -->
-    <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}"  deployRoot="../force-app/main/default/classes"  checkOnly="true" testLevel="RunSpecifiedTests" pollWaitMillis="40000"><runTest>SampleClass1Test</runTest></sf:deploy>
+    <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}"  deployRoot="../force-app/main/default"  checkOnly="true" testLevel="RunSpecifiedTests" pollWaitMillis="40000"><runTest>SampleClass1Test</runTest></sf:deploy>
 	</target>
 
   <target name="validateTestDeployToProd">
